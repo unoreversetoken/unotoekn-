@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNO REVERSE - The Ultimate Reversal Token</title>
+    <link rel="icon" type="image/png" href="images/green.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
@@ -484,6 +485,7 @@
                     </p>
                     <div class="contract-address mb-8 inline-block">
                         <span class="copy-tooltip">Click to copy contract</span>
+                        <span class="text-red-400 font-bold mr-2">CA:</span>
                         <code>qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump</code>
                     </div>
                     <div class="flex flex-col md:flex-row gap-6 justify-center md:justify-start">
@@ -545,6 +547,19 @@
     <section class="py-20 relative overflow-hidden">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Community Power Card - Full Width -->
+                <div class="glass-effect p-8 rounded-3xl text-center transform hover:scale-105 transition-all duration-300 md:col-span-3 mb-8">
+                    <div class="text-6xl mb-4 gradient-text">💪</div>
+                    <h3 class="text-2xl font-bold mb-2">Community Power</h3>
+                    <p class="text-gray-300 text-lg">Strong community-driven development with proven results - raised $8k from community for Dexscreener boost.</p>
+                    <div class="mt-4">
+                        <p class="text-sm text-gray-400 mb-2">Marketing Wallet:</p>
+                        <a href="https://solscan.io/account/CAnzH9KfS6uEDJGsw3KyMNvBqBvAXH5fGW5fCmmoPbdR" target="_blank" class="text-sm text-red-400 hover:text-red-300 break-all">
+                            CAnzH9KfS6uEDJGsw3KyMNvBqBvAXH5fGW5fCmmoPbdR
+                        </a>
+                    </div>
+                </div>
+                <!-- Other Cards -->
                 <div class="glass-effect p-8 rounded-3xl text-center transform hover:scale-105 transition-all duration-300">
                     <div class="text-6xl mb-4 gradient-text">0%</div>
                     <h3 class="text-2xl font-bold mb-2">Tax</h3>
@@ -721,6 +736,7 @@
                 <p class="text-xl text-gray-300 mb-8">The next 100x gem on Solana! Join the UNO REVERSE revolution before it's too late! 🚀</p>
                 <div class="contract-address mb-6 inline-block">
                     <span class="copy-tooltip">Click to copy contract</span>
+                    <span class="text-red-400 font-bold mr-2">CA:</span>
                     <code>qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump</code>
                 </div>
                 <div class="flex justify-center gap-4">
@@ -810,17 +826,19 @@
         });
 
         // Contract address copy functionality
-        const contractAddress = document.querySelector('.contract-address');
-        contractAddress.addEventListener('click', () => {
-            const code = contractAddress.querySelector('code').textContent;
-            navigator.clipboard.writeText(code);
-            
-            const tooltip = contractAddress.querySelector('.copy-tooltip');
-            tooltip.textContent = 'Copied!';
-            
-            setTimeout(() => {
-                tooltip.textContent = 'Click to copy';
-            }, 2000);
+        const contractAddresses = document.querySelectorAll('.contract-address');
+        contractAddresses.forEach(contractAddress => {
+            contractAddress.addEventListener('click', () => {
+                const code = contractAddress.querySelector('code').textContent;
+                navigator.clipboard.writeText(code);
+                
+                const tooltip = contractAddress.querySelector('.copy-tooltip');
+                tooltip.textContent = 'Copied!';
+                
+                setTimeout(() => {
+                    tooltip.textContent = 'Click to copy';
+                }, 2000);
+            });
         });
 
         // Add card flip functionality
