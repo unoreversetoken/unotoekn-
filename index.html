@@ -432,34 +432,117 @@
             height: 100%;
             border: none;
         }
+        /* Add these mobile-specific styles */
+        @media (max-width: 768px) {
+            /* Hero section mobile adjustments */
+            .hero-gradient {
+                padding-top: 6rem;
+                padding-bottom: 3rem;
+            }
+            
+            h1.text-6xl {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            /* Card adjustments for mobile */
+            .card-flip-container {
+                transform: scale(0.8);
+            }
+            
+            /* Button adjustments */
+            .flex.flex-col.md\\:flex-row.gap-6 {
+                gap: 1rem;
+            }
+            
+            .px-10 {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            
+            /* Contract address box */
+            .contract-address {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                width: 100%;
+                overflow-x: auto;
+            }
+            
+            /* Stats grid */
+            .grid.grid-cols-2.md\\:grid-cols-4 {
+                gap: 0.5rem;
+            }
+            
+            .glass-effect.p-4 {
+                padding: 0.75rem;
+            }
+            
+            /* Gallery adjustments */
+            .grid.grid-cols-2.md\\:grid-cols-4 {
+                gap: 0.5rem;
+            }
+            
+            /* Social links */
+            .glass-effect.p-10 {
+                padding: 1.5rem;
+            }
+            
+            /* Navigation adjustments */
+            .text-3xl.font-bold.tracking-wider img {
+                height: 3rem;
+            }
+            
+            /* Buy button in nav */
+            .bg-gradient-to-r.from-red-600.via-orange-500.to-red-600.px-8 {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Add smooth scrolling for iOS */
+        .scroll-smooth {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Improve tap targets for mobile */
+        @media (max-width: 768px) {
+            a, button {
+                min-height: 44px;
+                min-width: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body class="text-white min-h-screen">
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass-effect border-b border-white/10">
-        <div class="container mx-auto px-4 py-4">
+        <div class="container mx-auto px-4 py-2 md:py-4">
             <div class="flex justify-between items-center">
                 <div class="text-3xl font-bold tracking-wider">
-                    <img src="images/UNO-REVERSE-12-20-2024-4.png" alt="UNO REVERSE" class="h-16 md:h-20">
+                    <img src="images/UNO-REVERSE-12-20-2024-4.png" alt="UNO REVERSE" class="h-12 md:h-16">
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="https://x.com/UnoReverseToken" target="_blank" class="text-white hover:text-red-400 transition-all transform hover:scale-110 flex items-center gap-2">
-                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                <div class="flex items-center space-x-4 md:space-x-8">
+                    <a href="https://x.com/UnoReverseToken" target="_blank" class="text-white hover:text-red-400 transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                         </svg>
                     </a>
-                    <a href="https://t.me/UnoReverseCTO" target="_blank" class="text-white hover:text-red-400 transition-all transform hover:scale-110 flex items-center gap-2">
-                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="https://t.me/UnoReverseCTO" target="_blank" class="text-white hover:text-red-400 transition-all transform hover:scale-110">
+                        <svg class="w-6 h-6 md:w-7 md:h-7" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.5.16.13.13.16.3.18.43-.02.08-.02.18-.02.27z"/>
                         </svg>
                     </a>
-                    <a href="https://dexscreener.com/solana/agennwteh2wgtizfkuihw7nlqvrmkxxcrmzmyanqgyhv" target="_blank" class="text-white hover:text-red-400 transition-all transform hover:scale-110 flex items-center gap-2">
-                        <img src="images/dex.jpg" alt="Dexscreener" class="w-7 h-7 rounded-full">
+                    <a href="https://dexscreener.com/solana/agennwteh2wgtizfkuihw7nlqvrmkxxcrmzmyanqgyhv" target="_blank" class="text-white hover:text-red-400 transition-all transform hover:scale-110">
+                        <img src="images/dex.jpg" alt="Dexscreener" class="w-6 h-6 md:w-7 md:h-7 rounded-full">
+                    </a>
+                    <a href="https://jup.ag/swap/SOL-qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump" target="_blank" class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 px-4 md:px-8 py-2 md:py-3 rounded-full font-bold hover:opacity-90 transition-all glow btn-hover text-sm md:text-lg text-white whitespace-nowrap">
+                        Buy UNO
                     </a>
                 </div>
-                <a href="https://jup.ag/swap/SOL-qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump" target="_blank" class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 px-8 py-3 rounded-full font-bold hover:opacity-90 transition-all glow btn-hover text-lg text-white">
-                    Buy UNO
-                </a>
             </div>
         </div>
     </nav>
