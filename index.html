@@ -434,21 +434,61 @@
         }
         /* Add these mobile-specific styles */
         @media (max-width: 768px) {
-            /* Hero section mobile adjustments */
+            /* Hero section text adjustments */
             .hero-gradient {
                 padding-top: 5rem;
                 padding-bottom: 2rem;
             }
             
+            /* Title size adjustments */
             h1.text-6xl.md\\:text-8xl {
-                font-size: 2rem;
+                font-size: 2rem !important;
                 line-height: 1.2;
+                margin-bottom: 1rem;
             }
             
             /* Description text */
             .text-xl.md\\:text-3xl {
-                font-size: 1.125rem;
-                line-height: 1.5;
+                font-size: 1rem !important;
+                line-height: 1.4;
+                margin-bottom: 1rem;
+            }
+            
+            /* Contract address box */
+            .contract-address {
+                font-size: 0.75rem;
+                padding: 0.5rem;
+                width: 100%;
+                max-width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin-bottom: 1rem;
+            }
+            
+            .contract-address code {
+                font-size: 0.75rem;
+            }
+            
+            /* Container adjustments */
+            .container.mx-auto.px-4 {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+            
+            /* Button adjustments */
+            .flex.flex-col.md\\:flex-row.gap-6 {
+                gap: 0.5rem;
+            }
+            
+            .px-10.py-5 {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+            
+            /* Hero section layout */
+            .flex.flex-col.md\\:flex-row.items-center.justify-between > div {
+                width: 100%;
+                padding: 0 0.5rem;
             }
             
             /* Contract address box */
@@ -615,34 +655,34 @@
     <section class="pt-32 pb-20 hero-gradient">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 text-center md:text-left opacity-0" id="hero-text">
-                    <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-tight">
+                <div class="md:w-1/2 text-center md:text-left opacity-0 w-full px-2" id="hero-text">
+                    <h1 class="text-4xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 leading-tight">
                         <span class="gradient-text">
                             UNO REVERSE
                         </span>
                         <br />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-red-300 to-white">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-red-300 to-white text-3xl md:text-5xl lg:text-7xl">
                             The Ultimate Reversal
                         </span>
                     </h1>
-                    <p class="text-xl md:text-3xl text-gray-300 mb-8 leading-relaxed">
+                    <p class="text-lg md:text-xl lg:text-3xl text-gray-300 mb-4 md:mb-8 leading-relaxed">
                         Every time they dump, we say 
                         <span class="text-red-400 font-bold">"no u"</span> 
                         and pump even harder!
                     </p>
-                    <div class="contract-address mb-8 inline-block">
+                    <div class="contract-address mb-4 md:mb-8 inline-block max-w-full">
                         <span class="copy-tooltip">Click to copy contract</span>
                         <span class="text-red-400 font-bold mr-2">CA:</span>
-                        <code>qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump</code>
+                        <code class="break-all">qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump</code>
                     </div>
-                    <div class="flex flex-col md:flex-row gap-6 justify-center md:justify-start">
-                        <a href="https://jup.ag/swap/SOL-qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump" target="_blank" class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 px-10 py-5 rounded-full font-bold text-xl hover:opacity-90 transition-all glow btn-hover text-white">
+                    <div class="flex flex-col md:flex-row gap-3 md:gap-6 justify-center md:justify-start">
+                        <a href="https://jup.ag/swap/SOL-qdg3N7dy8y7x6dmnHeKMLtCX5RbrzLzhCUAArbJpump" target="_blank" class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 px-6 md:px-10 py-3 md:py-5 rounded-full font-bold text-base md:text-xl hover:opacity-90 transition-all glow btn-hover text-white">
                             Buy UNO Now
                         </a>
                         <a href="https://www.calculators.org/games/uno/game.php" 
                            onclick="window.open(this.href, '_blank', 'width=1000,height=800,menubar=no,toolbar=no,location=no,status=no'); return false;"
-                           class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 px-10 py-5 rounded-full font-bold text-xl hover:opacity-90 transition-all glow btn-hover inline-flex items-center gap-2 text-white">
-                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                           class="bg-gradient-to-r from-red-600 via-orange-500 to-red-600 px-6 md:px-10 py-3 md:py-5 rounded-full font-bold text-base md:text-xl hover:opacity-90 transition-all glow btn-hover inline-flex items-center gap-2 text-white">
+                            <svg class="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M4 5h16v2H4V5zm16 14H4v-2h16v2zm0-6H4v-2h16v2z"/>
                             </svg>
                             Play UNO
